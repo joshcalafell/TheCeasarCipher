@@ -8,7 +8,7 @@ Navigation
 [Author](#author) |
 [Usage](#usage) | 
 [Copyright](#copyright) | 
-[Liscencing](#liscencings) | 
+[Liscencing](#liscencing) | 
 [TODO](#todo) |
 [Screenshots](#screenshots) 
 
