@@ -1,9 +1,7 @@
 TheCeasarCipher
 ===============
-
 Navigation
 -----------
-
 [Abstract](#abstract) | 
 [Author](#author) |
 [Usage](#usage) | 
@@ -11,10 +9,10 @@ Navigation
 [Liscencing](#liscencing) | 
 [TODO](#todo) |
 [Screenshots](#screenshots) 
+![Picture](http://rabbitfighter.net/wp-content/uploads/2013/11/3DEtchASketchInAction.png)
 
 Abstract
 --------
-
 Simple implementations of Ceasar's cipher method from ancient Rome. 
 
 Author
@@ -37,6 +35,3 @@ TODO
 ----
 Simplify code, make corrections, correct spelling (my t key is broken, and strikes twice right now...), make commentts better. Fell free to fork to your own repository, or request to be made a partner on this project through email. :) -RF
 
-Screenshots
------------
-![Picture](http://rabbitfighter.net/wp-content/uploads/2014/09/CeasarCipher.png)
