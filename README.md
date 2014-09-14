@@ -9,7 +9,7 @@ Navigation
 [Liscencing](#liscencing) | 
 [TODO](#todo) |
 [Screenshots](#screenshots) 
-![Picture](http://rabbitfighter.net/wp-content/uploads/2013/11/3DEtchASketchInAction.png)
+![Picture](http://rabbitfighter.net/wp-content/uploads/2014/09/CeasarCipher.png)
 
 Abstract
 --------
