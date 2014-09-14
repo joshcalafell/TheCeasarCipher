@@ -5,7 +5,7 @@ Simple implementations of Ceasar's cipher method from ancient Rome.
 
 Author
 ------
-rabbitfighter (Joshua Michael Waggoner)
+Joshua Michael Waggoner (rabbitfighter81@gmail.com)
 
 Usage
 -----
