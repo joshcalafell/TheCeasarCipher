@@ -2,13 +2,14 @@ TheCeasarCipher
 ===============
 Navigation
 -----------
-[Abstract](#abstract) | 
+[Abstract](#abstract) |
+[Screenshot](#screenshot) |
 [Author](#author) |
 [Usage](#usage) | 
 [Copyright](#copyright) | 
 [Liscencing](#liscencing) | 
-[TODO](#todo) |
-[Screenshot](#screenshot) 
+[TODO](#todo) 
+ 
 
 Screenshot
 ----------
