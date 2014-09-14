@@ -47,12 +47,12 @@
 #
 # D_n(x) = (x - n) \mod {26}.
 #
-# Note: Tthis is just an exercise, and by no means a good way to encrypt messages
+# Note: This is just an exercise, and by no means a good way to encrypt messages
 # since the shift value, n, has to be known as well, also, n can be found through
 # interpolation quite easily, simply by searching for the most common letter in
 # the sequence and assuming that's a cipher for "E", the most common letter in
 # the alphabet. These are two reasons, and there are more, why you should never
-# use this for anytthing important. Tthatt being said, have fun :) -RF
+# use this for anything important. That being said, have fun :) -RF
 
 class CeasarCipher
 
@@ -67,7 +67,7 @@ class CeasarCipher
     puts ""
     puts "??????????????????????????????????????????????????????"
     puts "??                                                  ??"
-    puts "??               The Ceaser Cipher                  ??"
+    puts "??               The Caesar Cipher                  ??"
     puts "??               =================                  ??"
     puts "??                                                  ??"
     puts "??   Press [1] to ENCRYPT or Press [2] to DECRYPT   ??"
@@ -122,7 +122,7 @@ class CeasarCipher
     puts "\nEnter some plaintext to encode into a cipher:\n\n"
 
     # Use regular expressions to strip the text of non a-zA-Z characters 
-    # and whitespace, chomp tpo remove the "\n" from innput, and capitalize.
+    # and white-space, chomp to remove the "\n" from input, and capitalize.
     plaintext = gets.chomp.upcase.gsub(/\s+/, "").gsub(/[^a-zA-Z]/, "")
 
     puts "\nStripped plaintext:\n===================\n#{plaintext}"
@@ -135,18 +135,18 @@ class CeasarCipher
     # Get the cipher hash using the shift as a parameter
     cipherhash = createCipherHash(shift)
 
-    # Get the ciphetext charachter array
+    # Get the ciphetext character array
     ciphertext = createCiphertext(plaintext, cipherhash)
  
   end
 
-  # Decrypts the ciphertext into a plaintext using a cipherhash
+  # Decrypt the ciphertext into a plaintext using a cipherhash
   def decrypt
 
     puts "\nEnter the ciphertext to decode into plaintext:\n\n"
 
     # Use regular expressions to strip the text of non a-zA-Z characters 
-    # and whitespace, chomp tpo remove the "\n" from innput, and capitalize.
+    # and white-space, chomp tpo remove the "\n" from input, and capitalize.
     plaintext = gets.chomp.upcase.gsub(/\s+/, "").gsub(/[^a-zA-Z]/, "")
 
     puts "\nStripped ciphertext:\n===================\n#{plaintext}"
@@ -161,7 +161,7 @@ class CeasarCipher
     # to reverse cipher the ciphertext
     cipherhash = createCipherHash(-1*shift)
 
-    # Get the plaintext charachter array
+    # Get the plaintext character array
     plaintext = createPlaintext(plaintext, cipherhash)
 
   end
@@ -171,15 +171,15 @@ class CeasarCipher
   
     alphabetHash = Hash.new
 
-    # Iteratte through the alphhbet starting at ASCII A and ending
+    # Iterate through the alphabet starting at ASCII A and ending
     # at ASCII Z, adding each element to the alphabet hash with it's
-    # key being the letter and the vlue being its ASCII value - 65
-    # to assosciate A with 0 instead of 65. 
+    # key being the letter and the value being its ASCII value - 65
+    # to associate A with 0 instead of 65. 
     ('A'..'Z').each do |letter|
       alphabetHash.store("#{letter}", (letter.ord-ALPHABET_SHIFT)%MOD_SIZE)
     end
 
-    # Return the alhpabet hash
+    # Return the alphabet hash
     return alphabetHash
   
   end
@@ -219,7 +219,7 @@ class CeasarCipher
     # Populate the array from string
     plaintextArray = plaintext.split("")
 
-    # Create cipher array of the same lengtth as the plaintext
+    # Create cipher array of the same length as the plaintext
     cipherArray = Array.new(plaintextArray.length)
     
     # Create the ciphertext array
@@ -236,7 +236,7 @@ class CeasarCipher
 
   end
 
-  # Option [2] - Create the plainttext from ciphertext
+  # Option [2] - Create the plaintext from ciphertext
   def createPlaintext(ciphertext, cipherhash)
   
     # Create new array of the same length as the ciphertext
@@ -245,13 +245,13 @@ class CeasarCipher
     # Populate the array from string
     ciphertextArray = ciphertext.split("")
 
-    # Create cipher array of the same lengtth as the plaintext
+    # Create cipher array of the same length as the plaintext
     plaintextArray = Array.new(ciphertextArray.length)
     
-    # Create the plaintextt array
+    # Create the plaintext array
     (0..ciphertext.length-1).each do |i| 
 
-      # Cipher array constructed from reverse lookups of key/value pairs in
+      # Cipher array constructed from reverse look-ups of key/value pairs in
       # cipherhash.
       plaintextArray[i] = cipherhash.invert[ciphertextArray[i].to_s.ord-ALPHABET_SHIFT] 
       
@@ -265,8 +265,8 @@ class CeasarCipher
   # A little goodbye message
   def goodbye_message
 
-    puts "\nRemember... Don't use this for secure commmunications. Just for fun.\n"
-    puts "\n(c) 2014 rabbitfighttter.net\n"
+    puts "\nRemember... Don't use this for secure communications. Just for fun.\n"
+    puts "\n(c) 2014 rabbitfighter.net\n"
     puts "\nGoodbye :)\n\n"
 
   end
@@ -281,3 +281,4 @@ c.get_action
 c.goodbye_message
 
 #EOF
+
