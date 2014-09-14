@@ -13,7 +13,7 @@ Navigation
 
 Screenshot
 ----------
-![Picture](http://rabbitfighter.net/wp-content/uploads/2014/09/CeasarCipher.png)
+![Picture](http://rabbitfighter.net/wp-content/uploads/2014/09/encryption.png)
 
 Abstract
 --------
