@@ -8,7 +8,10 @@ Navigation
 [Copyright](#copyright) | 
 [Liscencing](#liscencing) | 
 [TODO](#todo) |
-[Screenshots](#screenshots) 
+[Screenshot](#screenshot) 
+
+Screenshot
+----------
 ![Picture](http://rabbitfighter.net/wp-content/uploads/2014/09/CeasarCipher.png)
 
 Abstract
