@@ -1,9 +1,11 @@
 #!/usr/bin/env ruby
 #
-# Author:: rabbitfighter (rabbitfighter81@gmail.com)
-# Version:: 0.1.0
+# Author::    rabbitfighter (rabbitfighter81@gmail.com)
+# Version::   0.1.1
 # Copyright:: (c) 2014 rabbitfighter.net
-# Liscence:: Creative Commons Attributtion-ShareAlike (CC BY-SA)
+# Liscence::  Creative Commons Attributtion-ShareAlike (CC BY-SA)
+# Website::   http://rabbitfighter.net
+# GitHub::    https://github.com/rabbitfighter81/TheCeasarCipher
 #
 # In cryptography, a Caesar cipher, also known as Caesar's cipher, 
 # the shift cipher, Caesar's code or Caesar shift, is one of the 
@@ -248,7 +250,7 @@ class CeasarCipher
 
   # A little goodbye message
   def goodbye_message
-    puts "Remember... don't use this for secure commmunications. Just for fun\n"
+    puts "Remember... don't use this for secure commmunications. Just for fun.\n"
     puts "\n(c) 2014 rabbitfighttter.net\n"
     puts "\nGoodbye :)\n\n"
   end
