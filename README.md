@@ -11,13 +11,13 @@ Usage
 -----
 Simply for fun
 
-Copyrightt
-----------
+Copyright
+---------
 (c) rabbitfighter.net 2014
 
 Liscencing
 ----------
-Creative Commons Attributtion-ShareAlike (CC BY-SA)
+Creative Commons Attribution-ShareAlike (CC BY-SA)
 
 TODO
 ----
