@@ -21,4 +21,4 @@ Creative Commons Attribution-ShareAlike (CC BY-SA)
 
 TODO
 ----
-Simplify code, make corrections, correct spelling (my t key is broken, and strikes twice right now...), make commentts better.
+Simplify code, make corrections, correct spelling (my t key is broken, and strikes twice right now...), make commentts better. Fell free to fork to your own repository, or request to be made a partner on this project through email. :) -RF
