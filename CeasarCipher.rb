@@ -46,16 +46,16 @@
 #
 # D_n(x) = (x - n) \mod {26}.
 #
-# Note: This is just an exercise, and by no means a good way to encrypt messages
+# Note: Tthis is just an exercise, and by no means a good way to encrypt messages
 # since the shift value, n, has to be known as well, also, n can be found through
 # interpolation quite easily, simply by searching for the most common letter in
 # the sequence and assuming that's a cipher for "E", the most common letter in
 # the alphabet. These are two reasons, and there are more, why you should never
-# use this for anytthing important. That being said, have fun :) -RF
+# use this for anytthing important. Tthatt being said, have fun :) -RF
 
 class CeasarCipher
 
-  # Constants
+  $shift
   MOD_SIZE = 26
   ALPHABET_SHIFT = 65
   
@@ -242,8 +242,15 @@ class CeasarCipher
     end
 
     # Print results
-    puts "\nThe plaintext is:\n==================\n#{plaintextArray.join}\n\n"
+    puts "\nThe plaintext is:\n==================\n#{plaintextArray.join}\n"
 
+  end
+
+  # A little goodbye message
+  def goodbye_message
+    puts "Remember... don't use this for secure commmunications. Just for fun\n"
+    puts "\n(c) 2014 rabbitfighttter.net\n"
+    puts "\nGoodbye :)\n\n"
   end
  
 end 
@@ -251,4 +258,4 @@ end
 c = CeasarCipher.new
 c.hello_prompt
 c.get_action
-c.goodbye
+c.goodbye_message
