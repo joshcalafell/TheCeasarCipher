@@ -1,4 +1,5 @@
-# File ::     CeasarCipher.rb
+#!/usr/bin/env ruby
+#
 # Author::    rabbitfighter (rabbitfighter81@gmail.com)
 # Version::   0.1.1
 # Copyright:: (c) 2014 rabbitfighter.net
@@ -56,12 +57,12 @@
 
 class CeasarCipher
 
-  $shift
+  # Constants
   MOD_SIZE = 26
   ALPHABET_SHIFT = 65
   
 
-  # A nice hello screen
+  # A nice hello output
   def hello_prompt
   
     puts ""
@@ -77,21 +78,6 @@ class CeasarCipher
 
   end
 
-  def createAlphabetHash
-  
-    alphabetHash = Hash.new
-
-    ('A'..'Z').each do |letter|
-      alphabetHash.store("#{letter}", (letter.ord-ALPHABET_SHIFT)%MOD_SIZE)
-    end
-
-    puts alphabetHash.display
-    
-    # Return the alhpabet 
-    return alphabetHash
-  
-  end
-
   # Gets the action, either 1 for ENCRYPT or 2 for  DECRYPT
   def get_action
 
@@ -101,76 +87,102 @@ class CeasarCipher
     # Get input from user 
     action = gets.to_i
 
-    # If it's a valid option, continue, else not...
-    if action == 1 || 2 
+    # Choose a valid option
+    if action == 1 || action == 2 
 
       puts "\nYou chose #{action}, #{actionHash[action]}\n"
 
       if action == 1
 	
-	# Call the encryption method (commented out for now)
+	# Call the encryption method
         encrypt
 
       else action == 2 
 
-	# Call the decryption method (commented out for now)
+	# Call the decryption method
         decrypt
 
       end
 
+    # Input was not valid (i.e. 1 or 2)
     else 
       
       # Tell user the entry was invalid
       puts "\nInvalid entry. Press [1] for ENCRYPTION, [2] for DECRYPTION\n"
       
-      # Call the method again (commented out)
-      # get_action()
+      # Call the method again if 1 or 2 is not the 
+      get_action
 
     end
 
   end 
 
-  # Encrypts the plaintext into a cipher
+  # Encrypts the plaintext into a ciphertext using a cipher hash
   def encrypt
 
-    # Get the message
     puts "\nEnter some plaintext to encode into a cipher:\n\n"
-    plaintext = gets.chomp.upcase.gsub(/\s+/, "")
+
+    # Use regular expressions to strip the text of non a-zA-Z characters 
+    # and whitespace, chomp tpo remove the "\n" from innput, and capitalize.
+    plaintext = gets.chomp.upcase.gsub(/\s+/, "").gsub(/[^a-zA-Z]/, "")
 
     puts "\nStripped plaintext:\n===================\n#{plaintext}"
-    # Get the shift value
+   
     puts "\nEnter a shift value:\n\n"
-    shift = gets
 
-    # Get the cipher hash
+    # Get the shift value
+    shift = gets.to_i
+
+    # Get the cipher hash using the shift as a parameter
     cipherhash = createCipherHash(shift)
 
-    # Get the charachter array
+    # Get the ciphetext charachter array
     ciphertext = createCiphertext(plaintext, cipherhash)
  
   end
 
-  # Decrypts the cipher into a plaintext
+  # Decrypts the ciphertext into a plaintext using a cipherhash
   def decrypt
 
-     # Get the message
     puts "\nEnter the ciphertext to decode into plaintext:\n\n"
-    plaintext = gets.chomp.upcase.gsub(/\s+/, "")
+
+    # Use regular expressions to strip the text of non a-zA-Z characters 
+    # and whitespace, chomp tpo remove the "\n" from innput, and capitalize.
+    plaintext = gets.chomp.upcase.gsub(/\s+/, "").gsub(/[^a-zA-Z]/, "")
 
     puts "\nStripped ciphertext:\n===================\n#{plaintext}"
-    # Get the shift value
+    
     puts "\nEnter the shift value:\n\n"
    
-    # Shift is multiplied by -1 to use one metthod for creating a cipherhash, either
-    # to encode or decode.
+    # Get the shift value. Shift is multiplied by -1 to use one single 
+    # method for creating a cipherhash - either to encode or decode.
     shift = gets.to_i
     
-    # Get the cipher hash
+    # Get the cipher hash using -1 * shift % 26 as a shift value
+    # to reverse cipher the ciphertext
     cipherhash = createCipherHash(-1*shift)
 
-    # Get the charachter array
+    # Get the plaintext charachter array
     plaintext = createPlaintext(plaintext, cipherhash)
 
+  end
+
+  # Creates the hash of original alphabet values (i.e. A=0, B=1...Z=25)
+  def createAlphabetHash
+  
+    alphabetHash = Hash.new
+
+    # Iteratte through the alphhbet starting at ASCII A and ending
+    # at ASCII Z, adding each element to the alphabet hash with it's
+    # key being the letter and the vlue being its ASCII value - 65
+    # to assosciate A with 0 instead of 65. 
+    ('A'..'Z').each do |letter|
+      alphabetHash.store("#{letter}", (letter.ord-ALPHABET_SHIFT)%MOD_SIZE)
+    end
+
+    # Return the alhpabet hash
+    return alphabetHash
+  
   end
 
   # Create the cipherhash of key/value pairs
@@ -202,14 +214,16 @@ class CeasarCipher
   # Option [1] - Create the ciphertext from plaintext
   def createCiphertext(plaintext, cipherhash)
     
+    # Create new array of the same length as the plaintext
     plaintextArray = Array.new(plaintext.length)
 
+    # Populate the array from string
     plaintextArray = plaintext.split("")
 
     # Create cipher array of the same lengtth as the plaintext
     cipherArray = Array.new(plaintextArray.length)
     
-    # Create the ciphertext
+    # Create the ciphertext array
     (0..plaintextArray.length-1).each do |i| 
    
       # Cipher array constructed from reverse lookups of key/value pairs in
@@ -226,14 +240,16 @@ class CeasarCipher
   # Option [2] - Create the plainttext from ciphertext
   def createPlaintext(ciphertext, cipherhash)
   
+    # Create new array of the same length as the ciphertext
     ciphertextArray = Array.new(ciphertext.length)
 
+    # Populate the array from string
     ciphertextArray = ciphertext.split("")
 
     # Create cipher array of the same lengtth as the plaintext
     plaintextArray = Array.new(ciphertextArray.length)
     
-    # Create the ciphertext
+    # Create the plaintextt array
     (0..ciphertext.length-1).each do |i| 
 
       # Cipher array constructed from reverse lookups of key/value pairs in
@@ -249,14 +265,20 @@ class CeasarCipher
 
   # A little goodbye message
   def goodbye_message
-    puts "Remember... don't use this for secure commmunications. Just for fun.\n"
+
+    puts "\nRemember... Don't use this for secure commmunications. Just for fun.\n"
     puts "\n(c) 2014 rabbitfighttter.net\n"
     puts "\nGoodbye :)\n\n"
+
   end
  
+# END CeasarCipher class
 end 
 
+# Create a new CeasarCipher object and call required methods
 c = CeasarCipher.new
 c.hello_prompt
 c.get_action
 c.goodbye_message
+
+#EOF
