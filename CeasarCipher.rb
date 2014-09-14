@@ -1,5 +1,4 @@
-#!/usr/bin/env ruby
-#
+# File::      CeasarCipher.rb
 # Author::    rabbitfighter (rabbitfighter81@gmail.com)
 # Version::   0.1.1
 # Copyright:: (c) 2014 rabbitfighter.net
