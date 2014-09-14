@@ -1,5 +1,4 @@
-#!/usr/bin/env ruby
-#
+# File ::     CeasarCipher.rb
 # Author::    rabbitfighter (rabbitfighter81@gmail.com)
 # Version::   0.1.1
 # Copyright:: (c) 2014 rabbitfighter.net
@@ -103,7 +102,7 @@ class CeasarCipher
     action = gets.to_i
 
     # If it's a valid option, continue, else not...
-    if action == 1 || action == 2 
+    if action == 1 || 2 
 
       puts "\nYou chose #{action}, #{actionHash[action]}\n"
 
