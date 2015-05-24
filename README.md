@@ -5,6 +5,7 @@ Navigation
 [Abstract](#abstract) |
 [Screenshot](#screenshot) |
 [Author](#author) |
+[Requirements](#requirements) |
 [Usage](#usage) | 
 [Liscence](#liscence) | 
 
@@ -21,6 +22,10 @@ In cryptography, a Caesar cipher, also known as Caesar's cipher, the shift ciphe
 Author
 ------
 Joshua Michael Waggoner (rabbitfighter81@cryptolab.net)
+
+Requirements
+------------
+Ruby
 
 Usage
 -----
