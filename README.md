@@ -20,7 +20,7 @@ In cryptography, a Caesar cipher, also known as Caesar's cipher, the shift ciphe
 
 Author
 ------
-Joshua Michael Waggoner (rabbitfighter81@gmail.com)
+Joshua Michael Waggoner (rabbitfighter81@cryptolab.net)
 
 Usage
 -----
